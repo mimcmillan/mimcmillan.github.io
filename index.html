@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home | Matthew McMillan</title>
+	<!-- Meta Info -->
+	<meta charset="utf-8">
+	<meta name="keywords" content="Matthew McMillan, Mathematics, math papers, Philosophy, writings, Leibniz, Analysis Situs, Leibniz translations, Wittgenstein">
+	<meta name="description" content="Repository of writings of Matthew McMillan, mathematician and philosopher.">
+
+	<!-- titling font -->
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+	<!-- regular font -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+	<link rel="shortcut icon" type="image/png" href="img/Favicon2transp.png">
+	
+	<link href="site_styles.css" rel="stylesheet">
+	<Meta name=viewport content="width=device-width, initial-scale=1">
+	<style>
+		.featured-work a {
+			
+			text-decoration:none;
+			display: block;
+			position: absolute;
+			
+			width:230px;
+			height:230px;
+		}
+		.featured-work p {
+			color:#353535;
+		}
+		#bio h2 {
+			text-align: left;
+			/*font-style:italic;*/
+			font-size: 1.7em;
+		}
+		.featured-work {
+			margin:10px 8px;
+			padding:10px;
+			width:230px;
+			height:230px;
+			float:left;
+			background-color:#D9D9D9;
+			color: #2F5875;
+			text-align: center;
+			position: relative;
+		}
+		.img-placeholder {
+			height: 235px;
+			width: 230px;
+			
+			/*border-radius: 125px 125px 125px 125px;*/
+			display: block;
+			float: left;
+			margin-right:20px;
+			overflow:hidden;
+			position:relative;
+
+		}
+		.img-placeholder img {
+			width:auto;
+			height:100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		/*.desc {
+			display: block;
+			float: left;
+			
+			width:530px;
+			margin:20px 10px 10px 10px;
+		}*/
+		.tagline {
+			font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+			color: #2F5875;
+			font-size: 2.0em;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:40px;
+		}
+		.tagline2 {
+			font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+			color: #2F5875;
+			font-size: 1.5em;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:15px;
+		}
+		.timeline-row {
+			display: flex;
+			width: 100%;
+			/*font-family: 'Cormorant Garamond', 'Times New Roman', serif;*/
+			justify-content: space-between;
+			align-items:center;
+			padding-top:5px;
+			padding-bottom:5px;
+		}
+		.spacer {
+			color:#FFF;
+		}
+		.timeline-date {
+			flex: 0 1 20%;
+			font-weight:bold;
+			font-size: 1em;
+		}
+		.timeline-event {
+			flex: 0 1 80%;
+			font-size: 1.0em;
+		}
+		ul {
+			list-style:none;
+			margin:0px;
+			padding:0px;
+		}
+		li {
+			text-align: center;
+		}
+		/*media query for phones*/
+	@media (max-width:767px) {
+		.featured-work {
+			width:60%;
+			margin-left: 16%;
+			margin-right: 16%;
+			
+		}
+		.featured-work a {
+		
+			width:auto;
+		 
+			top:0;
+			left:0;
+			right: 0;
+			bottom: 0;
+			
+		}
+		#bio {
+			width:95%;
+			margin:auto;
+		}
+		.timeline-row {
+			flex-direction:column;
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		.timeline-event {
+			text-align: center;
+		}
+	}
+	</style>
+	</head>
+<body>
+
+	<div class="navbar" id="my-navbar">
+		<div class="branding">
+			<h3><a href="index.html#bio">Matthew McMillan</a></h3>
+		</div> <!-- end #branding -->
+		<div id="nav-elt">
+			<ul>
+				<li><a href="leibniz.html">Leibniz</a>
+					<!-- Add Essays on Math & Essays on Philosophy submenu? This category is for not engaged in specific well-cited scholarly conversation-->
+					</li>
+				<li><a href="research.html">Research</a></li>
+				<li><a href="essays.html">Essays</a></li>
+				<!-- all scholarly info - math research at top, philosophy stuff at bottom -->
+				<li><a href="index.html" id="active">Home</a></li>
+					<!-- homepage should include selected 'greatest hits'/ what is most valuable things that he's worked on -->
+			</ul>
+		</div> <!-- end #nav-elt -->
+		<div class="contact">
+			<h3><a href="contact.html">Contact</a></h3>
+		</div> <!-- end #contact -->
+	</div> <!-- end .navbar -->
+	<div id="header">
+		<h1>Mathematics</h1>
+	</div> <!-- end #header -->
+	<div id="main">
+		<div class="tagline2">
+			– &amp; –
+		</div>
+		<div class="tagline">
+			Philosophy &nbsp;&bull;&nbsp; Psychology &nbsp;&bull;&nbsp; Pedagogy
+		</div><!-- end .tagline -->
+		
+		<div id="bio">
+			<div class="clearfloat" > </div><!-- end .clearfloat -->
+			<div class="img-placeholder">
+				<!-- <img src="img/matthew_headshot.jpg"> -->
+				<img src="img/Iceland_lowres.jpg" alt="headshot">
+			</div> <!-- end .img-placeholder -->
+			<div class="desc">
+				<p>I’m a mathematician, philosopher, writer... maybe inventor?
+				</p>
+				<p>In spring 2023 I finished a PhD in mathematics from UCLA, where I studied under Raphaёl Rouquier. Now I’m a professor at UVA.
+				</p>
+				<h3>Math</h3>
+				<p> I work on algebraic machinery that is designed to classify the smooth-topological phenomena discovered with PDE-based manifold invariants (i.e., gauge theory) that emerged originally from quantum field theory and string theory. These phenomena were discovered using analysis, but in order to understand them we must use algebra.</p>
+				<p>My dissertation was in ‘higher quantum algebra’. I found a model construction of an operation of tensor product for higher representations. This gives a solution to a conjecture of Rouquier from 2008 which hypothesized the existence of an abelian tensor 2-product. I hope to provide a totally new construction of Khovanov homology using this operation by extending it to more general settings. The project is part of a program to build a non-trivial topological quantum field theory in dimension 4.</p>
+				<p>In a second project, I am developing a theory of quantum group asymptotics for |q| &#8810; 1. I hope it will illuminate Sergei Gukov’s recently proposed q-series 3-manifold invariant. Quantum groups are interesting here because of their role in the Reshetikhin-Turaev invariant that Gukov’s construction recovers at a root of unity. My approach involves Varchenko’s hypergeometric functions, as well as an analogy with Cherednik algebras (for |t| &#8810; 1) from the world of complex reflection groups.</p>
+				<p>A third project has grown out of the second. Bonnafé-Rouquier conjectured a generalization of the Kazhdan-Lusztig cells defined for Coxeter groups to ‘Calogero-Moser cells’ defined for complex reflection groups. The CM and KL cells have been shown to coincide in type <i>A</i> and in rank 2. It appears possible to study these cells using Varchenko’s method: a KZ-type monodromy on the complement of the reflection hyperplanes is analyzed in ‘asymptotic zones’ (resolving crossings with a de Concini-Procesi model), and the limit as t &#8594; 0 is related to the CM cells arising at t = 0. The KZ system involves Gaudin Hamiltonians that feature in Cherednik algebras, but Gaudin Hamiltonians are also related to the q = 0 ‘crystallization’ phenomenon in quantum groups. This explains the analogy of the previous paragraph.</p>
+				<h3>Philosophy, etc.</h3>
+				<p>
+				I also read and write philosophy. In one project I aim to portray and clarify the nature of mathematics as a living discipline. I wish to cultivate a new approach to the philosophy of math that starts from an analogy with music, languages, architecture, and other rule-systems we indwell and within which we build or compose works of art, and that we also apply to create technologies with extrinsic purposes. My ideas have applications to ‘criticism’ and ‘pedagogy’ of math, and I write about these, but the ideas do not consist in the applications.
+				</p>
+				
+				<p>
+				In addition, I have some historical philosophy research going: a few projects on Leibniz, some old work on Berkeley, and some essays on Wittgenstein.
+				</p>
+
+				<p>
+				I think a lot about symmetry, duality, and layers. I think about symmetry as a matter of mathematics, of perception, of aesthetics, and of fundamental physics, and (more than I would like) as a matter of politics. I maintain another pet interest in the concept of ‘expertise’ as a matter of epistemology (and politics).
+				</p>
+				<p>
+				My interest in Leibniz stems from an underlying fascination with language and space from philosophical and mathematical points of view. My perspective compares to <a href="https://en.wikipedia.org/wiki/Louis_Couturat" target="_blank">Couturat’s</a>, although his writing about mathematics was mainly restricted to ‘logico-foundational’ topics, and he did not share my concern for geometry.
+				</p>
+				<p>
+				I study and practice foreign languages as a hobby, and currently have some facility with Russian, German, Latin, Hebrew, Spanish, and Italian. Having tried various methods and tools, I finally settled happily with the <a href="https://www.lingq.com/en/" target="_blank">LingQ software</a> invented by Steve Kaufmann. It is the preferred tool for many polyglots. Perhaps in a similar vein I enjoyed learning to read electronic circuit diagrams during childhood. (Building the circuits was a hobby of a different nature.) In the past I trained in classical music performance, on piano and trumpet; that has given way to concert <a href="https://www.kusc.org/" target="_blank">and radio</a> music appreciation in the last decade. I count music as a linguistic kind of endeavor, and indeed our musical notation exemplifies a well-adapted symbolic algebra for Western music, although it is not without shortcomings.
+				</p>
+				<!-- <p>
+				Ordinary language is for ordinary ‘life with language’. I wonder if music is the ruled-art of expressing our emotional surrounding, as math is the ruled-art of expressing our physical surrounding. Some people live in these surroundings.
+				</p>
+				<p>
+				My mathematical training lends itself to reading philosophy of language from the perspective of formal syntax and semantics. However, when it comes to the nature of ordinary language, I mostly find the writings in the post-Wittgenstein ‘Oxford school’ to be more revealing.
+				</p>
+				<p>
+				I think of symbol systems (such as formal logic, mathematical foundations, musical notation, syllabaries) as technologies for the expression of rule-based art forms, rather than as codifications of the forms of thought.</p> -->
+				
+			</div><!-- end .desc -->
+
+			<!-- <h2>Recent</h2>
+		<div class="featured-work">
+			<a href="researchpaper.html" target="_blank">
+			<h3>Leibniz: De Calculo Situum</h3>
+			<p>Description of work of interest lorem ipsum dolor est......</p>
+			</a>
+		</div>  end .featured work-->
+		<!-- <div class="featured-work">
+			<a href="researchpaper.html" target="_blank">
+			<h3>Summary of Research</h3>
+			<p>Description of work of interest lorem ipsum dolor est......</p>
+			</a>
+		</div> end .featured work-->
+		<!-- <div class="featured-work">
+			<a href="researchpaper.html" target="_blank">
+			<h3>Personality Archetypes in Mathematics</h3>
+			<p>Description of work of interest lorem ipsum dolor est......</p>
+			</a>
+		</div> end .featured work--> 
+
+		<div class="clearfloat" > </div><!-- end .clearfloat -->
+
+		<!-- <h2>Most Interesting</h2>
+			<ul>
+				<li><a href="leibniz-content/characteristica_geometrica.html" target="_blank">Leibniz: Characteristica Geometrica</a></li>
+				<li><a href="" target="_blank">Personality Archetypes in Mathematics</a></li>
+				<li><a href="" target="_blank">Evolution and Revolution in Mathematics</a></li><li><a href="" target="_blank">The Dual Faces of Mathematics</a></li>
+			</ul> -->
+		
+		<div class="clearfloat" > </div><!-- end .clearfloat -->
+			<h2>Bio Timeline</h2>
+			<div class="timeline-row">
+				<div class="timeline-date">2023–</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Assistant Professor, General Faculty at UVA.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2023</div> <!-- end .timeline-date -->
+				<div class="timeline-event">UCLA PhD. Committee: Raphaël Rouquier, Paul Balmer, Burt Totaro, Sergei Gukov.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2022–23</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Visiting graduate student at UVA.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2021</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Advanced to Candidacy (ABD) at UCLA. Found abelian tensor 2-product.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2020</div> <!-- end .timeline-date -->
+				<div class="timeline-event"><a href="img/Allison-Matthew-355.jpg" target="_blank">Married to Allison.</a></div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2019</div> <!-- end .timeline-date -->
+				<div class="timeline-event">August: Started translating Leibniz on the <i>analysis situs</i> (with <a href="http://davidjekel.com/" target="_blank">David Jekel</a>).<br>July: <a href="https://www.ias.edu/pcmi" target="_blank"> Park City / IAS</a> summer school: Quantum Field Theory and Manifold Invariants.<br>February: Began study under <a href="https://www.math.ucla.edu/~rouquier/" target="_blank">Raphaël Rouquier</a>.<br>January: <a href="https://www.esi.ac.at/" target="blank">ESI Vienna</a> workshop: Categorification in Quantum Topology.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2018</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Princeton summer school: Low-dim Topology and Symplectic Geometry.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2017</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Began PhD at UCLA <a href="https://en.wikipedia.org/wiki/DoD_NDSEG_Fellowship" target="_blank">supported by an NDSEG fellowship</a>; began study of Russian.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row spacer" ><!-- blank spacer -->
+				<div class="timeline-date">Spacer</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Spacer</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2017</div> <!-- end .timeline-date -->
+				<div class="timeline-event"><a href="https://www.philosophy.ox.ac.uk/bphil-philosophy" target="_blank">MPhil (‘BPhil’)</a> degree from Oxford philosophy; ‘Vantage’ certificate in German.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2016</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Began study of Latin and work on Leibniz.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2015</div> <!-- end .timeline-date -->
+				<div class="timeline-event"><a href="https://www.maths.cam.ac.uk/postgrad/part-iii/prospective.html" target="_blank">MASt degree (‘Part III’)</a> from Cambridge in mathematics.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2014</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Began graduate study in the UK supported by a <a href="https://en.wikipedia.org/wiki/Marshall_Scholarship" target="_blank">Marshall Scholarship</a>.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row spacer" ><!-- blank spacer -->
+				<div class="timeline-date">Spacer</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Spacer</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+
+
+			
+			<div class="timeline-row">
+				<div class="timeline-date">2014</div> <!-- end .timeline-date -->
+				<div class="timeline-event">BS degree, Mathematics and Physics, from Wheaton College in Illinois.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2013</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Summer: Symplectic geometry at UC Berkeley under <a href="https://dancg.sites.ucsc.edu/" target="_blank">Dan Cristofaro-Gardiner</a>.<br>Spring: <a href="https://www.budapestsemesters.com/" target="_blank">Budapest Semesters in Mathematics</a>.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2012</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Summer: Fusion energy research at <a href="https://www.pppl.gov/" target="_blank">PPPL</a> under <a href="https://scholar.google.com/citations?user=OJl6dcwAAAAJ&hl=en" target="_blank">Samuel Lazerson</a>.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			<div class="timeline-row">
+				<div class="timeline-date">2010–12</div> <!-- end .timeline-date -->
+				<div class="timeline-event">Research on the Wheaton Impulsive Reconnection Experiment.</div> <!-- end .timeline-event -->
+			</div> <!-- end .timeline-row -->
+			
+			</div> <!-- end #bio -->
+		
+		<div class="clearfloat" > </div><!-- end .clearfloat -->
+	</div> <!-- end #main -->
+	<div id="footer">
+		&copy;Matthew McMillan 2022
+	</div> <!-- end #footer -->
+</body>
+
+</html>

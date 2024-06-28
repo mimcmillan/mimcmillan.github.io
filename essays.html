@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Essays | Matthew McMillan</title>
+	<!-- Meta Info -->
+	<meta charset="utf-8">
+	<meta name="keywords" content="Matthew McMillan, Essays, Mathematics, Physics, Philosophy, Wittgenstein, Leibniz">
+	<meta name="description" content="Essays, reviews, expository works by Matthew McMillan">
+
+	<!-- titling font -->
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+	<!-- regular font -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+	<link rel="shortcut icon" type="image/png" href="img/Favicon2transp.png">
+
+	<meta name=viewport content="width=device-width, initial-scale=1">
+
+	<link href="site_styles.css" rel="stylesheet">
+
+
+	<style>
+		#main > h2 {
+			text-align:left;
+		}
+		.introduction {
+			width:92%;
+			padding: 0% 4%;
+			margin:0px;
+		}
+		.topic-section {
+			width: 100%;
+			padding: 0px 10px;
+			
+		}
+		.paper-teaser {
+			display: flex;
+			height:30px;
+			margin: 1% 0%;
+			justify-content: space-between;
+			align-items:center;
+			background-color: #D9D9D9;
+
+			cursor: pointer;
+			width:98%;
+			border:none;
+			outline: none;
+			font-size:1em; 
+			font-family: 'Noto Sans JP', Arial, sans-serif;
+			
+		}
+		.date {
+			flex: 0 1 20%;
+			text-align:center;
+			font-size: 0.8em;
+		}
+		.title {
+			flex: 0 1 75%;
+			text-align:left;
+		}
+		.title a {
+			text-decoration:none;
+			color:#353535;
+		}
+		.paper-desc a {
+			color:#2F5874;
+		}
+		.icon {
+			flex: 0 1 5%;
+			text-align:center;
+			font-size:1.75em;
+		}
+		
+		.active, .paper-teaser:hover {
+			background-color:#C2C2C2;
+		}
+		.paper-desc {
+			display:none;
+			padding: 1%;
+			padding-left:20%;
+			margin-bottom:10px;
+			background-color: #D9D9D9;
+			overflow:hidden;
+			margin: 1% 0%;
+			width:77%;
+		}
+		@media (max-width:480px) {
+			.paper-teaser { 
+			height:60px; }
+		}
+	</style>
+	</head>
+<body>
+
+	<div class="navbar" id="my-navbar">
+		<div class="branding">
+			<h3><a href="index.html#bio">Matthew McMillan</a></h3>
+		</div> <!-- end #branding -->
+		<div id="nav-elt">
+			<ul>
+				<li><a href="leibniz.html">Leibniz</a></li>
+				<li><a href="research.html">Research</a></li>
+				<li><a href="essays.html" id="active">Essays</a></li>
+				<li><a href="index.html">Home</a></li>
+			</ul>
+		</div> <!-- end #nav-elt -->
+		<div class="contact">
+			<h3><a href="contact.html">Contact</a></h3>
+		</div> <!-- end .contact -->
+	</div> <!-- end .navbar -->
+	<div id="header">
+		<h1>Essays</h1>
+	</div> <!-- end #header -->
+	<div id="main">
+	<!-- THE SECTION That has Leibniz essays should be a hyperlink to leibniz.html for the 'more' -->
+		<div class="introduction">
+			<p>This page shares writings that are not addressed to a specific academic conversation (<em>seu</em> journal), or else are not yet ready for archiving in the great library of mankind called ‘publication’.</p>
+			
+		</div> <!-- end .introduction -->
+		
+		<div class="topic-section">
+		<h2 id='reflections-on-the-nature-of-mathematics'>Reflections on the Nature of Mathematics</h2>
+		<p>(Download links coming slowly.)</p>
+		<h3 id='part-i-activity-of-mathematics'>Part I: Activity of Mathematics</h3>
+			§ Games: technical, logical-rational, phronetic-aesthetic. § Modes: science of objects, game of rules. § Structure and Narrative: space and time. § Abstract and Concrete. § Five Archetypes: composer, performer, teacher, philosopher, puzzle-solver.
+		<h3 id='part-ii-art-of-mathematics----language-music-code'>Part II: Art of Mathematics: music, language, code</h3>
+			§ Standard of Judgment: learning to play proofs. § Technique. § Depth Grammar. § Translation? § Meaning. § Exercise. Education.
+		<h3 id='part-iii-character-of-mathematics'>Part III: Character of Mathematics</h3>
+			§ Ingredients: metaphysics, language, puzzles. § Beauty and Fetish, Depth and Complexity. § Things and Parts. § Analysis and Synthesis. § Layers and Texture. § Visibility. § After Infinity.
+		<h3 id='part-iv-evolution-and-revolution-of-mathematics'>Part IV: Evolution and Revolution of Mathematics</h3>
+				§ Science and Technology: Revolution and Accretion. § Application. § Industrialization: light and massive technology. § Projects, Problems, Programmes. § Circulation.
+		</div> <!-- end .topic-section -->
+		
+		<div class="topic-section">
+		<h2 id='Wittgenstein'>Wittgenstein</h2>
+		<p>2017: <a href="essays-content/Wittgenstein_geometry_of_colour.pdf" target="_blank">Wittgenstein’s ‘Geometry of Colour’</a>
+		</div> <!-- end .topic-section -->
+		
+		<div class="topic-section">
+		<h2 id='Science'>Philosophy of Science</h2>
+		<p>2016: <a href="essays-content/Structuralism_and_coordination.pdf" target="_blank">Structuralism and the Problem of Coordination</a>
+		<p>2016: <a href="essays-content/Symmetry_representation_and_the_hole_argument.pdf" target="_blank">Symmetry, Representation, and the Hole Argument</a>
+		</div> <!-- end .topic-section -->
+		
+		<div class="clearfloat" > </div><!-- end .clearfloat -->
+	</div> <!-- end #main -->
+	<div id="footer">
+		&copy;Matthew McMillan 2022
+	</div> <!-- end #footer -->
+</body>
+<script>
+	var coll = document.getElementsByClassName("paper-teaser");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+		});
+	}
+	/*window.onscroll = function(){myFunction()};
+	var navbar = document.getElementById("my-navbar");
+	var sticky = navbar.offsetTop;
+
+	function myFunction() {
+		if (window.pageYOffset > sticky) {
+			navbar.classList.add("sticky");
+		} else {
+			navbar.classList.remove("sticky");
+		}
+	}*/
+</script>
+
+</html>
