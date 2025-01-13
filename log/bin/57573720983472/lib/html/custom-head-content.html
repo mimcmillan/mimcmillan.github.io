@@ -1,0 +1,15 @@
+<head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // workaround for styling in latest obsidian
+      const indicators = document.getElementsByClassName(
+        "list-collapse-indicator"
+      );
+      console.log("deleting", indicators);
+      while (indicators.length > 0) {
+        indicators[0].parentNode.removeChild(indicators[0]);
+      }
+
+    });
+  </script>
+</head>
