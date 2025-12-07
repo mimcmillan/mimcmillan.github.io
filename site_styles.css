@@ -77,12 +77,14 @@ h3 {
 #nav-elt {
 	height:50px;
 	flex:0 1 60%;
-
 }
 #nav-elt ul {
 	list-style:none;
 	margin:0px;
 	padding:0px;
+	gap: 16px;
+    display: flex;
+    justify-content: flex-end;
 }
 #nav-elt a {
 	text-decoration:none;
@@ -91,10 +93,9 @@ h3 {
 	float: right;
 	text-align: center;
 	height: 50px;
-	/*flex: 0 1 16%;*/
-	width: 80px;
+	flex: 0 1 auto;
+	/* width: 100px; */
 	line-height: 50px;
-
 }
 #nav-elt #active {
 	border-bottom: 3px solid #2F5875;
