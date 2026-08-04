@@ -1,146 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Pedagogy | Matthew McMillan</title>
-	<!-- Meta Info -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="keywords" content="Matthew McMillan, Pedagogy, Teaching and Learning, Education">
+	<title>xTensiv | Matthew McMillan</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Matthew McMillan, Pedagogy, Teaching and Learning, Education, xTensiv">
 	<meta name="description" content="Scholarship and innovation in teaching and learning mathematics">
-	<!-- titling font -->
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
-	<!-- regular font -->
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 
-	<link rel="shortcut icon" type="image/png" href="img/Favicon2transp.png">
+	<link rel="canonical" href="https://matthew-mcmillan.com/pedagogy.html">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://matthew-mcmillan.com/pedagogy.html">
+	<meta property="og:title" content="xTensiv | Matthew McMillan">
+	<meta property="og:description" content="Scholarship and innovation in teaching and learning mathematics">
+	<meta property="og:image" content="https://matthew-mcmillan.com/img/Iceland_lowres.jpg">
 
-	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="img/favicon.png">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-	<link href="site_styles.css" rel="stylesheet">
-
-	<style>
-		#main > h2 {
-			text-align:left;
-		}
-		.introduction {
-			width:92%;
-			padding: 0% 4%;
-			margin:0px;
-		}
-		.intro-button {
-			float: left;
-			width: 40%;
-			height:40px;
-			margin: 5%;
-			background-color:#2F5875;
-			cursor:pointer;
-			color: #FFF;
-			box-shadow: 2px 2px 3px #121212;;
-			text-align: center;
-			line-height:40px;
-		}
-		.intro-button a {
-			color: #FFF;
-			text-decoration: none;
-			font-size: 1.5em;
-			font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-			font-style:italic;
-
-		}
-		.topic-section {
-			width: 100%;
-			padding: 0px 10px;
-			
-		}
-		.paper-teaser {
-			display: flex;
-			height:30px;
-			margin: 1% 0%;
-			justify-content: space-between;
-			align-items:center;
-			background-color: #D9D9D9;
-
-			cursor: pointer;
-			width:98%;
-			border:none;
-			outline: none;
-			font-size:1em; 
-			font-family: 'Noto Sans JP', Arial, sans-serif;
-			
-		}
-		.projected {
-			color:#707070;
-		}
-		.paper-teaser {
-			color:#353535;
-		}
-		.date {
-			flex: 0 1 20%;
-			text-align:center;
-			font-size: 0.8em;
-		}
-		.title {
-			flex: 0 1 75%;
-			text-align:left;
-		}
-		.title a {
-			text-decoration:none;
-			color:#353535;
-		}
-		.paper-desc a {
-			color:#2F5874;
-		}
-		.icon {
-			flex: 0 1 5%;
-			text-align:center;
-			font-size:1.75em;
-		}
-		.active, .paper-teaser:hover {
-			background-color:#C2C2C2;
-		}
-		.paper-desc {
-			display:none;
-			padding: 1%;
-			padding-left:20%;
-			margin-bottom:10px;
-			background-color: #D9D9D9;
-			overflow:hidden;
-			margin: 1% 0%;
-			width:77%;
-		}
-	</style>
-	</head>
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/site.css" rel="stylesheet">
+</head>
 <body>
 
-	<div class="navbar" id="my-navbar">
-		<div class="branding">
-			<h3><a href="index.html">Matthew McMillan</a></h3>
-		</div> <!-- end #branding -->
-		<div id="nav-elt">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="research.html">Research</a></li>
-				<li><a href="pedagogy.html" id="active">xTensiv</a></li>
-				<li><a href="leibniz.html">Leibniz</a></li>
-				<li><a href="essays.html">Essays</a></li>
-			</ul>
-		</div> <!-- end #nav-elt -->
-		<div class="contact">
-			<h3><a href="contact.html">Contact</a></h3>
-		</div> <!-- end .contact -->
-	</div> <!-- end .navbar -->
-	<div id="header">
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header>
+		<div class="masthead">
+			<a href="index.html">Matthew McMillan</a>
+			<div class="masthead-email">mcmillan@virginia.edu</div>
+		</div>
+		<nav class="site-nav" aria-label="Site">
+			<div class="site-nav-inner">
+				<a href="index.html">Home</a>
+				<a href="research.html">Research</a>
+				<a href="pedagogy.html" aria-current="page">xTensiv</a>
+				<a href="leibniz.html">Leibniz</a>
+				<a href="essays.html">Essays</a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="page-title">
 		<h1>xTensiv</h1>
-	</div> <!-- end #header -->
-	<div id="main">
-		<div class="introduction">
-			<p>I am developing a new kind of digital medium, library, and learning environment for college-level mathematics called <em>xTensiv</em>. The project includes several components: an <em>encyclopedic content library,</em> a database that affords generation of <em>feasible learning paths</em> through the library, a 2.5D spatial embedding of the library as a surveyable landscape for <em>efficient navigation</em> and <em>exploratory learning,</em> and a suite of tools to assist learners with <em>discovery,</em> <em>analysis,</em> and <em>study</em> in the library.</p>
+	</div>
 
-			<p>Mathematics is not amenable to serious learning and skill acquisition from a Wiki-style encyclopedia because the mean length of a practicable learning path is much too long in this subject. On the other hand, the linear ordering of a comprehensive textbook is far longer than necessary, and is therefore inefficient for learning that is directed toward individual items chosen within the	 textbook.</p>
+	<div class="layout">
 
-			<p>My vision of <em>xTensiv</em> applies modern computing and data management to produce and manage efficient pathways toward user-determined learning targets. It exploits the topology associated with a map to expose learning targets that are feasible next steps for the learner.</p>
+		<aside class="toc" aria-label="Contents">
+			<details open>
+				<summary>Contents</summary>
+				<nav>
+					<a href="#idea">Idea</a>
+					<a href="#motivation">Motivation</a>
+					<a href="#vision">Vision</a>
+					<a href="#status">Status</a>
+				</nav>
+			</details>
+		</aside>
 
-			<p>In a nutshell, I aim for software that offers ‘mapping’ and ‘routing’ solutions to the problems of content discovery and efficient navigation of learning pathways, something akin to the Google Maps mapping and routing solutions for location discovery and physical navigation.</p>
+		<main id="main">
 
-			<p>I have been developing <em>xTensiv</em> since 2022 at UCLA. Currently <em>xTensiv</em> houses over 800 pages of learning material in a web-friendly format that <a href="https://xtensiv-library.pages.dev/" target="_blank">you can browse here</a>, as well as a demo graphical interface (which isn’t ready for public consumption). Since my move to Charlottesville, UVA students with majors in CS, math, and business, as well as experienced area entrepreneurs, have contributed to <em>xTensiv</em> in many ways.</p>
-		</div> <!-- end .introduction -->
+			<section>
+				<h2 id="idea">Idea</h2>
+				<p>I am developing a new kind of digital medium, library, and learning environment for college-level mathematics called <em>xTensiv</em>. The project includes several components: an <em>encyclopedic content library,</em> a database that affords generation of <em>feasible learning paths</em> through the library, a 2.5D spatial embedding of the library as a surveyable landscape for <em>efficient navigation</em> and <em>exploratory learning,</em> and a suite of tools to assist learners with <em>discovery,</em> <em>analysis,</em> and <em>study</em> in the library.</p>
+			</section>
+
+			<section>
+				<h2 id="motivation">Motivation</h2>
+				<p>Mathematics is not amenable to serious learning and skill acquisition from a Wiki-style encyclopedia because the mean length of a practicable learning path is much too long in this subject. On the other hand, the linear ordering of a comprehensive textbook is far longer than necessary, and is therefore inefficient for learning that is directed toward individual items chosen within the textbook.</p>
+			</section>
+
+			<section>
+				<h2 id="vision">Vision</h2>
+				<p>My vision of <em>xTensiv</em> applies modern computing and data management to produce and manage efficient pathways toward user-determined learning targets. It exploits the topology associated with a map to expose learning targets that are feasible next steps for the learner.</p>
+				<p>In a nutshell, I aim for software that offers ‘mapping’ and ‘routing’ solutions to the problems of content discovery and efficient navigation of learning pathways, something akin to the Google Maps mapping and routing solutions for location discovery and physical navigation.</p>
+			</section>
+
+			<section>
+				<h2 id="status">Status</h2>
+				<p>I have been developing <em>xTensiv</em> since 2022 at UCLA. Currently <em>xTensiv</em> houses over 800 pages of learning material in a web-friendly format that <a href="https://xtensiv-library.pages.dev/" target="_blank">you can browse here</a>, as well as a demo graphical interface (which isn’t ready for public consumption). Since my move to Charlottesville, UVA students with majors in CS, math, and business, as well as experienced area entrepreneurs, have contributed to <em>xTensiv</em> in many ways.</p>
+			</section>
+
+		</main>
+	</div>
+
+	<div id="footer">
+		&copy; Matthew McMillan 2026
+	</div>
+
+	<script src="js/site.js"></script>
+</body>
 </html>

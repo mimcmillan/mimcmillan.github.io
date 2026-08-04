@@ -1,283 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Home | Matthew McMillan</title>
-	<!-- Meta Info -->
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Matthew McMillan, Mathematics, math papers, Philosophy, writings, Leibniz, Analysis Situs, Leibniz translations, Wittgenstein">
 	<meta name="description" content="Repository of writings of Matthew McMillan, mathematician and philosopher.">
 
-	<!-- titling font  -->
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
-	<!-- regular font -->
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+	<link rel="canonical" href="https://matthew-mcmillan.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://matthew-mcmillan.com/">
+	<meta property="og:title" content="Home | Matthew McMillan">
+	<meta property="og:description" content="Repository of writings of Matthew McMillan, mathematician and philosopher.">
+	<meta property="og:image" content="https://matthew-mcmillan.com/img/Iceland_lowres.jpg">
 
-	<link rel="shortcut icon" type="image/png" href="img/Favicon2transp.png">
-	
-	<link href="site_styles.css" rel="stylesheet">
-	<Meta name=viewport content="width=device-width, initial-scale=1">
-	<style>
-		.featured-work a {
-			
-			text-decoration:none;
-			display: block;
-			position: absolute;
-			
-			width:230px;
-			height:230px;
-		}
-		.featured-work p {
-			color:#353535;
-		}
-		#bio h2 {
-			text-align: left;
-			/*font-style:italic;*/
-			font-size: 1.7em;
-		}
-		.featured-work {
-			margin:10px 8px;
-			padding:10px;
-			width:230px;
-			height:230px;
-			float:left;
-			background-color:#D9D9D9;
-			color: #2F5875;
-			text-align: center;
-			position: relative;
-		}
-		.img-placeholder {
-			height: 235px;
-			width: 230px;
-			
-			/*border-radius: 125px 125px 125px 125px;*/
-			display: block;
-			float: left;
-			margin-right:20px;
-			overflow:hidden;
-			position:relative;
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="img/favicon.png">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-		}
-		.img-placeholder img {
-			width:auto;
-			height:100%;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-		}
-		/*.desc {
-			display: block;
-			float: left;
-			
-			width:530px;
-			margin:20px 10px 10px 10px;
-		}*/
-		.tagline {
-			font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-			color: #2F5875;
-			font-size: 1.7em;
-			font-weight: bold;
-			text-align: center;
-			margin-top: -30px;
-			margin-bottom:40px;
-		}
-		.tagline2 {
-			font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-			color: #2F5875;
-			font-size: 1.5em;
-			font-weight: bold;
-			text-align: center;
-			margin-bottom:15px;
-		}
-		.timeline-row {
-			display: flex;
-			width: 100%;
-			/*font-family: 'Cormorant Garamond', 'Times New Roman', serif;*/
-			justify-content: space-between;
-			align-items:center;
-			padding-top:5px;
-			padding-bottom:5px;
-		}
-		.spacer {
-			color:#FFF;
-		}
-		.timeline-date {
-			flex: 0 1 20%;
-			font-weight:bold;
-			font-size: 1em;
-		}
-		.timeline-event {
-			flex: 0 1 80%;
-			font-size: 1.0em;
-		}
-		ul {
-			list-style:none;
-			margin:0px;
-			padding:0px;
-		}
-		li {
-			text-align: center;
-		}
-		/*media query for phones*/
-	@media (max-width:767px) {
-		.featured-work {
-			width:60%;
-			margin-left: 16%;
-			margin-right: 16%;
-			
-		}
-		.featured-work a {
-		
-			width:auto;
-		 
-			top:0;
-			left:0;
-			right: 0;
-			bottom: 0;
-			
-		}
-		#bio {
-			width:95%;
-			margin:auto;
-		}
-		.timeline-row {
-			flex-direction:column;
-			padding-top:10px;
-			padding-bottom:10px;
-		}
-		.timeline-event {
-			text-align: center;
-		}
-	}
-	</style>
-	</head>
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/site.css" rel="stylesheet">
+</head>
 <body>
 
-	<div class="navbar" id="my-navbar">
-		<div class="branding">
-			<h3><a href="index.html">Matthew McMillan</a></h3>
-		</div> <!-- end #branding -->
-		<div id="nav-elt">
-			<ul>
-				<li><a href="index.html" id="active">Home</a></li>
-				<li><a href="research.html">Research</a></li>
-				<li><a href="pedagogy.html">xTensiv</a></li>
-				<li><a href="leibniz.html">Leibniz</a></li>
-				<li><a href="essays.html">Essays</a></li>
-			</ul>
-		</div> <!-- end #nav-elt -->
-		<div class="contact">
-			<h3><a href="contact.html">Contact</a></h3>
-		</div> <!-- end #contact -->
-	</div> <!-- end .navbar -->
-	<div id="header">
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header>
+		<div class="masthead">
+			<a href="index.html">Matthew McMillan</a>
+			<div class="masthead-email">mcmillan@virginia.edu</div>
+		</div>
+		<nav class="site-nav" aria-label="Site">
+			<div class="site-nav-inner">
+				<a href="index.html" aria-current="page">Home</a>
+				<a href="research.html">Research</a>
+				<a href="pedagogy.html">xTensiv</a>
+				<a href="leibniz.html">Leibniz</a>
+				<a href="essays.html">Essays</a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="page-title">
 		<h1>Mathematics</h1>
-	</div> <!-- end #header -->
-	<div id="main">
-		<div class="tagline">
-			+ <br>
-			Philosophy &nbsp;&bull;&nbsp; Psychology &nbsp;&bull;&nbsp; Pedagogy
-		</div>		
-		<div id="bio">
-			<div class="clearfloat" > </div><!-- end .clearfloat -->
-			<div class="img-placeholder">
-				<!-- <img src="img/matthew_headshot.jpg"> -->
-				<img src="img/Iceland_lowres.jpg" alt="headshot">
-			</div> <!-- end .img-placeholder -->
-			<div class="desc">
+		<p class="tagline">+<br>Philosophy &nbsp;&middot;&nbsp; Psychology &nbsp;&middot;&nbsp; Pedagogy</p>
+	</div>
+
+	<div class="layout">
+
+		<aside class="toc" aria-label="Contents">
+			<details open>
+				<summary>Contents</summary>
+				<nav>
+					<a href="#about">About</a>
+					<a href="#timeline">Bio Timeline</a>
+				</nav>
+			</details>
+		</aside>
+
+		<main id="main">
+
+			<section>
+				<h2 id="about">About</h2>
+				<figure class="bio-photo">
+					<img src="img/Iceland_lowres.jpg" alt="Matthew McMillan in Iceland">
+				</figure>
 				<p>I’m a mathematician, philosopher, writer... hopeful inventor?</p>
 				<p>My interests are very broad, crossing the boundaries of STEM and the humanities, academia and industry. Currently I serve as an Assistant Professor in the Center for Applied Mathematics at UVA.</p>
 				<p>I studied under Raphaёl Rouquier for my PhD at UCLA, finishing in 2023. In my dissertation in higher quantum algebra I developed a tensor 2-product for 2-representations of Lie algebras. I am hoping that this operation will yield a totally new construction of Khovanov homology, and perhaps one day lead to an interesting 4D TQFT. I also have math research projects about quantum group asymptotics and Calogero Moser cells.</p>
-				<p>Since 2023 my attention has been focused primarily on my teaching and the development of a major pedagogy initiative called <em>xTensiv</em>. This project aims to replace math textbooks with a “learnable library,” a web-scale database of text and problems equipped with learn-order data, allowing computer generation and graphical navigation of all possible and feasible learning pathways through the library. The purpose is to provide for efficient <em>goal-directed</em> learning and effective <em>exploratory</em> learning.</p>
-				<p>I am nearly finished with my first book, entitled “G. W. Leibniz, The Philosophy of Situation. ‘Geometric Characteristic’ and other essays on anaylsis situs.” This book will provide translation of, and commentary upon, Leibniz’s <em>analysis situs</em> project. (Publication anticipated in 2026.)</p>
+				<p>Since 2023 my attention has been focused primarily on my teaching and the development of a major pedagogy initiative called <a href="pedagogy.html"><em>xTensiv</em></a>. This project aims to replace math textbooks with a “learnable library,” a web-scale database of text and problems equipped with learn-order data, allowing computer generation and graphical navigation of all possible and feasible learning pathways through the library. The purpose is to provide for efficient <em>goal-directed</em> learning and effective <em>exploratory</em> learning.</p>
+				<p>I am nearly finished with my first <a href="leibniz.html">book</a>, <em>G. W. Leibniz, The Philosophy of Situation: ‘Geometric Characteristic’ and Other Essays on Analysis Situs.</em> This book provides translation of, and commentary upon, Leibniz’s <em>analysis situs</em> project.</p>
 				<p>I am slowly working on publishing additional writing in philosophy from my years in Oxford, and I have a series of essays planned out about the nature of mathematics.</p>
-			</div>
-		<div class="clearfloat" > </div>
+			</section>
 
-		<div class="clearfloat" > </div><!-- end .clearfloat -->
-			<h2>Bio Timeline</h2>
-			<div class="timeline-row">
-				<div class="timeline-date">2023–</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Assistant Professor, General Faculty at UVA.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2023</div> <!-- end .timeline-date -->
-				<div class="timeline-event">UCLA PhD. Committee: Raphaël Rouquier, Paul Balmer, Burt Totaro, Sergei Gukov.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2022–23</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Visiting graduate student at UVA.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2021</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Advanced to Candidacy (ABD) at UCLA. Found abelian tensor 2-product.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2020</div> <!-- end .timeline-date -->
-				<div class="timeline-event"><a href="img/Allison-Matthew-355.jpg" target="_blank">Married to Allison.</a></div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2019</div> <!-- end .timeline-date -->
-				<div class="timeline-event">August: Started translating Leibniz on the <i>analysis situs</i> (with <a href="http://davidjekel.com/" target="_blank">David Jekel</a>).<br>July: <a href="https://www.ias.edu/pcmi" target="_blank"> Park City / IAS</a> summer school: Quantum Field Theory and Manifold Invariants.<br>February: Began study under <a href="https://www.math.ucla.edu/~rouquier/" target="_blank">Raphaël Rouquier</a>.<br>January: <a href="https://www.esi.ac.at/" target="blank">ESI Vienna</a> workshop: Categorification in Quantum Topology.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2018</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Princeton summer school: Low-dim Topology and Symplectic Geometry.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2017</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Began PhD at UCLA <a href="https://en.wikipedia.org/wiki/DoD_NDSEG_Fellowship" target="_blank">supported by an NDSEG fellowship</a>; began study of Russian.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row spacer" ><!-- blank spacer -->
-				<div class="timeline-date">Spacer</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Spacer</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2017</div> <!-- end .timeline-date -->
-				<div class="timeline-event"><a href="https://www.philosophy.ox.ac.uk/bphil-philosophy" target="_blank">MPhil (‘BPhil’)</a> degree from Oxford philosophy; ‘Vantage’ certificate in German.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2016</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Began study of Latin and work on Leibniz.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2015</div> <!-- end .timeline-date -->
-				<div class="timeline-event"><a href="https://www.maths.cam.ac.uk/postgrad/part-iii/prospective.html" target="_blank">MASt degree (‘Part III’)</a> from Cambridge in mathematics.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2014</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Began graduate study in the UK supported by a <a href="https://en.wikipedia.org/wiki/Marshall_Scholarship" target="_blank">Marshall Scholarship</a>.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row spacer" ><!-- blank spacer -->
-				<div class="timeline-date">Spacer</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Spacer</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
+			<section>
+				<h2 id="timeline">Bio Timeline</h2>
+				<div class="timeline">
+					<div class="tl-row">
+						<div class="tl-date">2023–</div>
+						<div class="tl-event">Assistant Professor, General Faculty at UVA.</div>
+					</div>
 
+					<hr class="tl-break">
 
-			
-			<div class="timeline-row">
-				<div class="timeline-date">2014</div> <!-- end .timeline-date -->
-				<div class="timeline-event">BS degree, Mathematics and Physics, from Wheaton College in Illinois.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2013</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Summer: Symplectic geometry at UC Berkeley under <a href="https://dancg.sites.ucsc.edu/" target="_blank">Dan Cristofaro-Gardiner</a>.<br>Spring: <a href="https://www.budapestsemesters.com/" target="_blank">Budapest Semesters in Mathematics</a>.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2012</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Summer: Fusion energy research at <a href="https://www.pppl.gov/" target="_blank">PPPL</a> under <a href="https://scholar.google.com/citations?user=OJl6dcwAAAAJ&hl=en" target="_blank">Samuel Lazerson</a>.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			<div class="timeline-row">
-				<div class="timeline-date">2010–12</div> <!-- end .timeline-date -->
-				<div class="timeline-event">Research on the Wheaton Impulsive Reconnection Experiment.</div> <!-- end .timeline-event -->
-			</div> <!-- end .timeline-row -->
-			
-			</div> <!-- end #bio -->
-		
-		<div class="clearfloat" > </div><!-- end .clearfloat -->
-	</div> <!-- end #main -->
+					<div class="tl-row">
+						<div class="tl-date">2023</div>
+						<div class="tl-event">UCLA PhD. Committee: Raphaël Rouquier, Paul Balmer, Burt Totaro, Sergei Gukov.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2022–23</div>
+						<div class="tl-event">Visiting graduate student at UVA.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2021</div>
+						<div class="tl-event">Advanced to Candidacy (ABD) at UCLA. Found abelian tensor 2-product.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2020</div>
+						<div class="tl-event"><a href="img/Allison-Matthew-355.jpg" target="_blank">Married to Allison.</a></div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2019</div>
+						<div class="tl-event">August: Started translating Leibniz on the <i>analysis situs</i> (with <a href="http://davidjekel.com/" target="_blank">David Jekel</a>).<br>July: <a href="https://www.ias.edu/pcmi" target="_blank">Park City / IAS</a> summer school: Quantum Field Theory and Manifold Invariants.<br>February: Began study under <a href="https://www.math.ucla.edu/~rouquier/" target="_blank">Raphaël Rouquier</a>.<br>January: <a href="https://www.esi.ac.at/" target="_blank">ESI Vienna</a> workshop: Categorification in Quantum Topology.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2018</div>
+						<div class="tl-event">Princeton summer school: Low-dim Topology and Symplectic Geometry.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2017</div>
+						<div class="tl-event">Began PhD at UCLA <a href="https://en.wikipedia.org/wiki/DoD_NDSEG_Fellowship" target="_blank">supported by an NDSEG fellowship</a>; began study of Russian.</div>
+					</div>
+
+					<hr class="tl-break">
+
+					<div class="tl-row">
+						<div class="tl-date">2017</div>
+						<div class="tl-event"><a href="https://www.philosophy.ox.ac.uk/bphil-philosophy" target="_blank">MPhil (‘BPhil’)</a> degree from Oxford philosophy; ‘Vantage’ certificate in German.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2016</div>
+						<div class="tl-event">Began study of Latin and work on Leibniz.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2015</div>
+						<div class="tl-event"><a href="https://www.maths.cam.ac.uk/postgrad/part-iii/prospective.html" target="_blank">MASt degree (‘Part III’)</a> from Cambridge in mathematics.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2014</div>
+						<div class="tl-event">Began graduate study in the UK supported by a <a href="https://en.wikipedia.org/wiki/Marshall_Scholarship" target="_blank">Marshall Scholarship</a>.</div>
+					</div>
+
+					<hr class="tl-break">
+
+					<div class="tl-row">
+						<div class="tl-date">2014</div>
+						<div class="tl-event">BS degree, Mathematics and Physics, from Wheaton College in Illinois.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2013</div>
+						<div class="tl-event">Summer: Symplectic geometry at UC Berkeley under <a href="https://dancg.sites.ucsc.edu/" target="_blank">Dan Cristofaro-Gardiner</a>.<br>Spring: <a href="https://www.budapestsemesters.com/" target="_blank">Budapest Semesters in Mathematics</a>.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2012</div>
+						<div class="tl-event">Summer: Fusion energy research at <a href="https://www.pppl.gov/" target="_blank">PPPL</a> under <a href="https://scholar.google.com/citations?user=OJl6dcwAAAAJ&amp;hl=en" target="_blank">Samuel Lazerson</a>.</div>
+					</div>
+					<div class="tl-row">
+						<div class="tl-date">2010–12</div>
+						<div class="tl-event">Research on the Wheaton Impulsive Reconnection Experiment.</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+	</div>
+
 	<div id="footer">
-		&copy;Matthew McMillan 2025
-	</div> <!-- end #footer -->
-</body>
+		&copy; Matthew McMillan 2026
+	</div>
 
+	<script src="js/site.js"></script>
+</body>
 </html>
