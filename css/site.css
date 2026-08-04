@@ -601,11 +601,17 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
   }
   table.docs { min-width: 0; }
   table.docs,
-  table.docs tbody,
-  table.docs tr,
-  table.docs td { display: block; }
+  table.docs tbody { display: block; }
   table.docs thead { display: none; }
+  /* each row becomes a card laid out on a grid:
+     row 1: year | abbr | title (right)
+     row 2: words (left) | quality (right)
+     rows 3-5: catalog/typed/hand | stamped/english/bilingual */
   table.docs tr {
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    column-gap: 0.6rem;
+    align-items: baseline;
     border: 1px solid var(--line);
     border-radius: 6px;
     background: #FFFFFF;
@@ -613,27 +619,38 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     margin-bottom: 0.75rem;
   }
   table.docs td {
+    display: block;
     border: none;
     padding: 0.1rem 0;
     text-align: left;
     white-space: normal;
   }
-  table.docs td:nth-child(8),
-  table.docs td:nth-child(9) { white-space: normal; }
   table.docs td:empty { display: none; }
-  /* year + abbreviation form an inline heading line, title below */
+  /* header row: year + abbreviation left, title right beside them */
   table.docs .year,
   table.docs .abbr {
-    display: inline-block;
     font-weight: 600;
     color: var(--navy);
-    padding-right: 0.4rem;
   }
+  table.docs .year { grid-area: 1 / 1; }
+  table.docs .abbr { grid-area: 1 / 2; }
   table.docs td:nth-child(3) {
+    grid-area: 1 / 3;
     font-weight: 600;
     font-size: 0.98rem;
+    text-align: right;
     padding-bottom: 0.35rem;
   }
+  /* words left, quality marker top right */
+  table.docs td.num { grid-area: 2 / 1 / 3 / 3; text-align: left; }
+  table.docs td.quality { grid-area: 2 / 3; text-align: right; }
+  /* two parallel link columns */
+  table.docs td:nth-child(5) { grid-area: 3 / 1 / 4 / 3; }
+  table.docs td:nth-child(6) { grid-area: 4 / 1 / 5 / 3; }
+  table.docs td:nth-child(7) { grid-area: 5 / 1 / 6 / 3; }
+  table.docs td:nth-child(8) { grid-area: 3 / 3; }
+  table.docs td:nth-child(9) { grid-area: 4 / 3; }
+  table.docs td:nth-child(10) { grid-area: 5 / 3; }
   /* field labels */
   table.docs td:nth-child(n+4)::before {
     font-weight: 600;
@@ -646,8 +663,6 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
   table.docs td:nth-child(8)::before { content: "Stamped: "; }
   table.docs td:nth-child(9)::before { content: "English: "; }
   table.docs td:nth-child(10)::before { content: "Bilingual: "; }
-  table.docs td:nth-child(11)::before { content: "Quality: "; }
-  table.docs td.quality { text-align: left; }
 }
 
 /* ============================================================
