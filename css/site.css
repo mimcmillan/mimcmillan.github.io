@@ -21,7 +21,7 @@
   --mist-hover: #E3E9ED;
   --line:  #D8DDE1;
   --muted: #5E6B76;
-  --serif: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  --serif: 'Gelasio', Georgia, 'Times New Roman', serif;
   --sans:  'Source Sans 3', 'Segoe UI', Arial, sans-serif;
 }
 
@@ -34,7 +34,7 @@ body {
   background: #FFFFFF;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 18px; /* Crimson Pro runs small at a given px size */
+  font-size: 16px;
   line-height: 1.6;
 }
 
