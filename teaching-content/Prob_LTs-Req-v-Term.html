@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probability Learning Targets: Requisite vs. Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAFAF6;
+  --panel: #FFFFFF;
+  --ink: #22271F;
+  --ink-soft: #5C6357;
+  --ink-faint: #9AA093;
+  --hair: #E3E2D9;
+  --hair-strong: #C9C8BC;
+  --bark: #96602F;
+  --leaf: #639922;
+  --amber: #E39A1C;
+  --edge: #B9B7AA;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #191B17;
+    --panel: #22251F;
+    --ink: #E8E7DD;
+    --ink-soft: #A9AF9F;
+    --ink-faint: #757B6D;
+    --hair: #33372E;
+    --hair-strong: #4A4F42;
+    --bark: #B0763E;
+    --leaf: #7AB53A;
+    --amber: #EFAC33;
+    --edge: #565B4E;
+  }
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 28px clamp(16px, 4vw, 48px) 48px;
+}
+header { max-width: 1100px; margin: 0 auto 20px; }
+h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.subtitle { color: var(--ink-soft); margin-top: 6px; max-width: 68ch; }
+main { max-width: 1100px; margin: 0 auto; }
+.stage {
+  position: relative;
+  border: 1px solid var(--hair-strong);
+  border-radius: 14px;
+  background: var(--panel);
+  overflow: hidden;
+}
+svg#graph { display: block; width: 100%; height: 600px; cursor: grab; }
+svg#graph:active { cursor: grabbing; }
+.node-label {
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 11px;
+  fill: var(--ink-soft);
+  pointer-events: none;
+}
+.hint {
+  position: absolute; left: 14px; top: 12px;
+  font-size: 12px; color: var(--ink-faint);
+  pointer-events: none;
+}
+.detail {
+  position: absolute; right: 14px; top: 14px;
+  width: min(280px, 60%);
+  background: var(--panel);
+  border: 1px solid var(--hair-strong);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: none;
+}
+.detail.open { display: block; }
+.detail h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.25;
+  padding-right: 20px;
+}
+.detail .class-line { font-size: 13px; margin-top: 4px; display: flex; align-items: center; gap: 7px; }
+.detail .swatch { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.detail .peel-line { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+.detail h3 {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ink-faint); margin: 12px 0 3px;
+}
+.detail ul { list-style: none; padding: 0; font-size: 13px; color: var(--ink-soft); }
+.detail li::before { content: "\2192\00a0"; color: var(--ink-faint); }
+.detail .none { color: var(--ink-faint); font-style: italic; font-size: 13px; }
+.detail .close {
+  position: absolute; right: 10px; top: 10px;
+  border: 0; background: none; color: var(--ink-faint);
+  font-size: 16px; line-height: 1; cursor: pointer; padding: 4px;
+}
+.detail .close:hover { color: var(--ink); }
+.controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px 28px;
+  align-items: center;
+  margin-top: 18px;
+}
+.control { display: flex; align-items: center; gap: 10px; }
+.control label { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+input[type=range] { flex: 1; accent-color: var(--bark); min-width: 90px; }
+.readout {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  min-width: 15ch;
+  text-align: right;
+}
+button#reset {
+  font: 500 13px "Public Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--hair-strong);
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+button#reset:hover { background: var(--hair); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--bark); outline-offset: 2px; }
+.legend {
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  margin-top: 16px; font-size: 13px; color: var(--ink-soft);
+}
+.legend span { display: flex; align-items: center; gap: 7px; }
+.legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.note {
+  margin-top: 18px; padding-top: 14px;
+  border-top: 1px solid var(--hair);
+  color: var(--ink-soft); font-size: 13.5px; max-width: 80ch;
+}
+@media (max-width: 640px) {
+  .controls { grid-template-columns: 1fr; }
+  .readout { text-align: left; }
+  svg#graph { height: 480px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Probability Learning Targets: Requisite vs.&nbsp;Terminal</h1>
+</header>
+<main>
+  <div class="stage">
+    <svg id="graph" role="img" aria-label="Force-directed dependency graph of probability topics"></svg>
+    <div class="hint">Drag nodes · scroll to zoom · click a node for details</div>
+    <aside class="detail" id="detail" aria-live="polite">
+      <button class="close" id="detail-close" aria-label="Close details">×</button>
+      <h2 id="d-name"></h2>
+      <div class="class-line"><span class="swatch" id="d-swatch"></span><span id="d-class"></span></div>
+      <div class="peel-line" id="d-peel"></div>
+      <h3>Prerequisites</h3>
+      <ul id="d-pre"></ul>
+      <h3>Feeds into</h3>
+      <ul id="d-post"></ul>
+    </aside>
+  </div>
+  <div class="controls">
+    <div class="control">
+      <label for="peel">Peel depth</label>
+      <input type="range" id="peel" min="1" max="12" step="1" value="2">
+      <span class="readout" id="peel-out"></span>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--bark)"></i>Core — both classifiers agree</span>
+    <span><i style="background:var(--amber)"></i>Ambiguous — algorithm and judgment disagree</span>
+    <span><i style="background:var(--leaf)"></i>Periphery — both classifiers agree</span>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let BARK = css("--bark"), LEAF = css("--leaf"), AMBER = css("--amber");
+
+const N = [
+["outcomes","Outcomes & events"],["venn","Venn theory"],["cond","Conditioning & Bayes"],["count","Counting"],["ps","Parallel & series"],
+["pmf","Discrete PMF"],["pdf","Continuous PDF"],["cdf","CDF"],["exp","Expectation"],["var","Variance"],["bern","Bernoulli process"],["poisson","Poisson process"],["normal","Normal distribution"],["derived","Derived RV"],
+["joint","Joint PMF & PDF"],["marginal","Marginal PMF & PDF"],["jointev","Joint expectation & variance"],["cov","Covariance & correlation"],["derivedj","Derived RV from joint"],["sums","Sums of RVs"],["condj","Conditioning joint RV"],
+["clt","Central limit theorem"],["markov","Markov & Chebyshev"],["lln","Law of large numbers"],["sig","Significance testing"],["binhyp","Binary hypothesis testing"],["minmse","Minimum MSE estimator"],["linmse","Linear MSE estimator"]
+];
+const E = [["outcomes","venn"],["venn","cond"],["cond","pmf"],["cond","ps"],["cond","bern"],["cond","condj"],["count","pmf"],["count","bern"],["pmf","pdf"],["pmf","cdf"],["pmf","exp"],["pmf","bern"],["pmf","joint"],["pdf","cdf"],["pdf","exp"],["pdf","poisson"],["pdf","normal"],["pdf","joint"],["bern","poisson"],["exp","var"],["exp","jointev"],["var","normal"],["var","markov"],["var","jointev"],["cdf","normal"],["cdf","derived"],["joint","marginal"],["joint","jointev"],["joint","derivedj"],["joint","condj"],["marginal","cov"],["marginal","condj"],["jointev","cov"],["jointev","minmse"],["derived","derivedj"],["derivedj","sums"],["cov","sums"],["cov","linmse"],["sums","clt"],["sums","lln"],["markov","lln"],["normal","clt"],["clt","sig"],["condj","binhyp"],["condj","minmse"],["minmse","linmse"]];
+const JUDGMENT_GREEN = new Set(["ps","bern","poisson","clt","lln","sig","binhyp","minmse","linmse"]);
+
+const out = {}, inn = {};
+N.forEach(d => { out[d[0]] = []; inn[d[0]] = []; });
+E.forEach(d => { out[d[0]].push(d[1]); inn[d[1]].push(d[0]); });
+
+const layer = {};
+let L = 0, changed = true;
+while (changed) {
+  changed = false; L++;
+  N.forEach(d => {
+    const id = d[0];
+    if (layer[id] === undefined && out[id].every(t => layer[t] !== undefined && layer[t] < L)) {
+      layer[id] = L; changed = true;
+    }
+  });
+}
+const maxL = Math.max(...Object.values(layer));
+
+const nodes = N.map(d => ({ id: d[0], label: d[1], layer: layer[d[0]] }));
+const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+const links = E.map(d => ({ source: d[0], target: d[1] }));
+let depth = 2;
+const isGreenAlgo = d => d.layer <= depth;
+const classOf = d => {
+  const a = isGreenAlgo(d), j = JUDGMENT_GREEN.has(d.id);
+  return a === j ? (a ? "periphery" : "core") : "ambiguous";
+};
+const colorOf = d => ({ core: BARK, periphery: LEAF, ambiguous: AMBER })[classOf(d)];
+
+const deg = {};
+links.forEach(l => { deg[l.source] = (deg[l.source] || 0) + 1; deg[l.target] = (deg[l.target] || 0) + 1; });
+nodes.forEach(n => { n.r = 5 + Math.min(deg[n.id] || 0, 10) * 0.95; });
+const nb = {};
+links.forEach(l => {
+  (nb[l.source] = nb[l.source] || new Set()).add(l.target);
+  (nb[l.target] = nb[l.target] || new Set()).add(l.source);
+});
+
+const svgEl = document.getElementById("graph");
+const svg = d3.select(svgEl);
+let W = svgEl.clientWidth, H = svgEl.clientHeight;
+
+svg.append("defs").append("marker")
+  .attr("id", "arr").attr("viewBox", "0 0 10 10")
+  .attr("refX", 9).attr("refY", 5)
+  .attr("markerWidth", 5).attr("markerHeight", 5).attr("orient", "auto")
+  .append("path").attr("d", "M1 1L9 5L1 9")
+  .attr("fill", "none").attr("stroke", css("--edge"))
+  .attr("stroke-width", 1.6).attr("stroke-linecap", "round");
+
+const root = svg.append("g");
+const linkSel = root.append("g").selectAll("line").data(links).join("line")
+  .attr("stroke", css("--edge")).attr("stroke-width", 1).attr("marker-end", "url(#arr)");
+const nodeSel = root.append("g").selectAll("g").data(nodes).join("g").style("cursor", "pointer");
+const circles = nodeSel.append("circle")
+  .attr("r", d => d.r).attr("fill", colorOf)
+  .attr("stroke", css("--panel")).attr("stroke-width", 1.2);
+nodeSel.append("text").attr("class", "node-label")
+  .text(d => d.label).attr("text-anchor", "middle").attr("y", d => d.r + 14);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(80).strength(0.5))
+  .force("charge", d3.forceManyBody().strength(-600))
+  .force("center", d3.forceCenter(W / 2, H / 2))
+  .force("x", d3.forceX(W / 2).strength(0.05))
+  .force("y", d3.forceY(H / 2).strength(0.07))
+  .force("collide", d3.forceCollide().radius(d => d.r + 17));
+
+sim.on("tick", () => {
+  linkSel.each(function (d) {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, len = Math.hypot(dx, dy) || 1;
+    const p = (d.target.r + 4) / len, q = (d.source.r + 2) / len;
+    d3.select(this)
+      .attr("x1", d.source.x + dx * q).attr("y1", d.source.y + dy * q)
+      .attr("x2", d.target.x - dx * p).attr("y2", d.target.y - dy * p);
+  });
+  nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+nodeSel.call(d3.drag()
+  .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+  .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+  .on("end", (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+svg.call(d3.zoom().scaleExtent([0.35, 2.5]).filter(ev => !ev.button)
+  .on("zoom", ev => root.attr("transform", ev.transform)));
+
+nodeSel.on("mouseover", (ev, d) => {
+  nodeSel.attr("opacity", o => o === d || nb[d.id]?.has(o.id) ? 1 : 0.15);
+  linkSel.attr("opacity", l => l.source === d || l.target === d ? 1 : 0.08)
+    .attr("stroke", l => l.source === d || l.target === d ? colorOf(d) : css("--edge"));
+}).on("mouseout", () => {
+  nodeSel.attr("opacity", 1);
+  linkSel.attr("opacity", 1).attr("stroke", css("--edge"));
+});
+
+const detail = document.getElementById("detail");
+const fillList = (elId, ids) => {
+  const el = document.getElementById(elId);
+  el.innerHTML = ids.length
+    ? ids.map(i => `<li>${byId[i].label}</li>`).join("")
+    : `<li class="none" style="list-style:none">none — this is a ${elId === "d-pre" ? "root" : "sink"}</li>`;
+};
+let selected = null;
+function showDetail(d) {
+  selected = d;
+  document.getElementById("d-name").textContent = d.label;
+  const c = classOf(d);
+  document.getElementById("d-class").textContent =
+    c === "core" ? "Core (both agree)" : c === "periphery" ? "Periphery (both agree)" : "Ambiguous (classifiers disagree)";
+  document.getElementById("d-swatch").style.background = colorOf(d);
+  document.getElementById("d-peel").textContent = "peel layer " + d.layer + " of " + maxL;
+  fillList("d-pre", inn[d.id]);
+  fillList("d-post", out[d.id]);
+  detail.classList.add("open");
+}
+nodeSel.on("click", (ev, d) => { if (ev.defaultPrevented) return; showDetail(d); });
+document.getElementById("detail-close").onclick = () => { detail.classList.remove("open"); selected = null; };
+
+function refresh() {
+  circles.attr("fill", colorOf);
+  let g = 0, y = 0;
+  nodes.forEach(n => { const c = classOf(n); if (c === "periphery") g++; else if (c === "ambiguous") y++; });
+  document.getElementById("peel-out").textContent = depth + " · " + g + " green · " + y + " amber";
+  if (selected) showDetail(selected);
+}
+const peelEl = document.getElementById("peel");
+peelEl.max = maxL;
+peelEl.addEventListener("input", e => { depth = +e.target.value; refresh(); });
+window.addEventListener("resize", () => {
+  W = svgEl.clientWidth; H = svgEl.clientHeight;
+  sim.force("center", d3.forceCenter(W / 2, H / 2))
+     .force("x", d3.forceX(W / 2).strength(0.05))
+     .force("y", d3.forceY(H / 2).strength(0.07));
+  sim.alpha(0.3).restart();
+});
+if (window.matchMedia) {
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    BARK = css("--bark"); LEAF = css("--leaf"); AMBER = css("--amber");
+    circles.attr("stroke", css("--panel"));
+    linkSel.attr("stroke", css("--edge"));
+    d3.select("#arr path").attr("stroke", css("--edge"));
+    refresh();
+  });
+}
+refresh();
+</script>
+</body>
+</html>
