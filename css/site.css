@@ -4,7 +4,8 @@
    Palette
      ink        #353535   body text
      navy       #2F5875   headings, nav bar, wordmark
-     link       #2261B4   links and hover accents
+     link       #27679B   links and hover accents
+     link-bright #1F39C2  links in the Leibniz texts table (small type)
      mist       #EFF2F4   light panels (card headers)
      line       #D8DDE1   hairlines and borders
      muted      #5E6B76   secondary text (dates, captions)
@@ -16,7 +17,8 @@
 :root {
   --ink:   #353535;
   --navy:  #2F5875;
-  --link:  #1F39C2;
+  --link:  #27679B;
+  --link-bright: #1F39C2;
   --mist:  #EFF2F4;
   --mist-hover: #E3E9ED;
   --line:  #D8DDE1;
@@ -34,7 +36,7 @@ body {
   background: #FFFFFF;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -151,10 +153,7 @@ a:hover {
   gap: 1.05rem;
   align-items: start;
 }
-.layout.no-toc {
-  display: block;
-  max-width: 50rem;
-}
+.layout.no-toc main { grid-column: 2; }
 
 main { max-width: 46rem; min-width: 0; }
 
@@ -291,7 +290,7 @@ main p { margin: 0 0 1rem; }
   cursor: pointer;
   text-align: left;
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: inherit; /* same size as body text */
   color: var(--ink);
   line-height: 1.35;
   transition: background-color 0.12s ease;
@@ -307,6 +306,18 @@ main p { margin: 0 0 1rem; }
   letter-spacing: 0.02em;
 }
 .pub-title { flex: 1; min-width: 0; }
+.pub-tag {
+  flex: 0 0 auto;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 0.55rem;
+  white-space: nowrap;
+}
 .pub-icon {
   flex: 0 0 auto;
   font-family: var(--sans);
@@ -450,6 +461,7 @@ table.docs td {
   vertical-align: top;
 }
 table.docs tr:last-child td { border-bottom: none; }
+table.docs a { color: var(--link-bright); }
 table.docs tr.group td {
   background: var(--mist);
   font-weight: 600;
@@ -475,11 +487,50 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
   margin-top: -0.5rem;
 }
 
+/* ---------- topic filter (research page) ---------- */
+
+.pub-controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem 1rem;
+  margin: 0.5rem 0 1rem;
+}
+.pub-filter {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.pub-filter button {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #4A5763;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+.pub-filter button:hover { background: var(--mist-hover); }
+.pub-filter button[aria-pressed="true"] {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #FFFFFF;
+}
+
 /* ---------- expand/collapse all control ---------- */
 
 .expand-all-bar {
   text-align: right;
   margin: 0 0 -0.5rem;
+}
+.pub-controls .expand-all {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.3rem 0;
+  white-space: nowrap;
 }
 .expand-all {
   background: none;
@@ -549,8 +600,6 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
 
 @media (max-width: 600px) {
 
-  body { font-size: 16px; }
-
   .masthead { padding: 0.5rem 1rem 0.45rem 0.6rem; }
   .site-nav-inner { padding: 0; }
   .site-nav a {
@@ -576,10 +625,12 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     padding-right: 2.4rem;
   }
   .pub-date {
-    flex: 1 1 100%;
+    flex: 0 0 auto;
     text-align: left;
-    order: -1;
+    order: -2;
   }
+  .pub-tag { order: -1; }
+  .pub-title { flex: 1 1 100%; }
   .pub-icon {
     position: absolute;
     right: 0.85rem;
@@ -587,6 +638,14 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     transform: translateY(-50%);
   }
   .pub-body-inner > div { padding: 0.6rem 1rem 0.2rem; }
+
+  .pub-controls { flex-wrap: wrap; }
+  .pub-filter { flex-basis: 100%; }
+}
+
+/* seven nav links don't fit one row on a phone: wrap as 4 + 3 rather than 6 + 1 */
+@media (max-width: 500px) {
+  .site-nav a { flex-basis: 22%; }
 }
 
 /* ============================================================
@@ -673,6 +732,7 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
   .skip-link,
   .site-nav,
   .toc,
+  .pub-controls,
   .expand-all-bar,
   #footer { display: none; }
 
