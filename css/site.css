@@ -133,14 +133,6 @@ a:hover {
   margin: 1.6rem 0 0.1rem;
   line-height: 1.15;
 }
-.tagline {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.25rem;
-  color: var(--navy);
-  margin: 0 0 0.8rem;
-  line-height: 1.2;
-}
 
 /* ---------- layout: sidebar + main ---------- */
 
@@ -154,6 +146,8 @@ a:hover {
   align-items: start;
 }
 .layout.no-toc main { grid-column: 2; }
+/* home page has no page title above the layout */
+header + .layout { margin-top: 1.6rem; }
 
 main { max-width: 46rem; min-width: 0; }
 
@@ -206,6 +200,7 @@ main h2 {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 1.5rem;
+  clear: both; /* headings never wrap beside the floated bio photo */
 }
 main > section:first-child h2,
 main h2:first-child { margin-top: 0.5rem; }
@@ -221,7 +216,18 @@ main p { margin: 0 0 1rem; }
 
 .lead { font-size: 1.02em; }
 
-/* ---------- profile (about page) ---------- */
+/* ---------- bio photo (about page) ---------- */
+
+/* floats left at the top of the Overview; text wraps beside it, then runs full width */
+.bio-photo {
+  float: left;
+  width: 200px;
+  height: auto;
+  margin: 0.35rem 1.75rem 0.75rem 0;
+  border-radius: 6px;
+}
+
+/* ---------- profile (home page) ---------- */
 
 /* photo at left; name, role, institution beside it */
 .profile {
@@ -248,8 +254,15 @@ main p { margin: 0 0 1rem; }
   font-size: 1.6rem;
   line-height: 1.2;
   color: var(--navy);
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.3rem;
 }
+.profile .profile-fields {
+  font-style: italic;
+  color: var(--navy);
+  margin-top: 0.55rem;
+}
+/* when the line is too long it breaks after "Mathematics +" */
+.profile-fields span { white-space: nowrap; }
 
 /* ---------- timeline ---------- */
 
@@ -618,6 +631,14 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     text-align: center;
   }
   .profile img { width: min(320px, 100%); }
+
+  /* too narrow to wrap text beside the photo */
+  .bio-photo {
+    float: none;
+    display: block;
+    width: min(220px, 65%);
+    margin: 0 auto 1.25rem;
+  }
 
   .tl-row, .doc-row {
     grid-template-columns: 1fr;
