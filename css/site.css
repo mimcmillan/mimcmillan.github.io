@@ -206,7 +206,6 @@ main h2 {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 1.5rem;
-  clear: both; /* headings never wrap beside the floated bio photo */
 }
 main > section:first-child h2,
 main h2:first-child { margin-top: 0.5rem; }
@@ -222,26 +221,34 @@ main p { margin: 0 0 1rem; }
 
 .lead { font-size: 1.02em; }
 
-/* ---------- bio (home page) ---------- */
+/* ---------- profile (about page) ---------- */
 
-/* photo floats right; text flows beside it and then fills the full width */
-.bio-photo {
-  float: right;
-  width: 240px;
-  margin: 0.35rem 0 1rem 2rem;
+/* photo at left; name, role, institution beside it */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 0.5rem 0 1.75rem;
 }
-.bio-photo img {
-  width: 100%;
+.profile img {
+  flex: 0 0 auto;
+  width: 240px;
   height: auto;
   border-radius: 6px;
   display: block;
 }
-.bio-photo figcaption {
+.profile p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+.profile .profile-name {
   font-family: var(--sans);
-  font-size: 0.78rem;
-  color: var(--muted);
-  text-align: center;
-  padding-top: 0.35rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
 }
 
 /* ---------- timeline ---------- */
@@ -590,12 +597,6 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     border-left-color: transparent;
     font-weight: 600;
   }
-
-  .bio-photo {
-    float: none;
-    width: min(280px, 70%);
-    margin: 0 auto 1.25rem;
-  }
 }
 
 @media (max-width: 600px) {
@@ -609,6 +610,14 @@ table.docs td.quality { text-align: center; white-space: nowrap; }
     font-size: 0.9rem;
   }
   .page-title h1 { font-size: 1.8rem; }
+
+  /* profile stacks: photo above, text centered beneath */
+  .profile {
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+  }
+  .profile img { width: min(320px, 100%); }
 
   .tl-row, .doc-row {
     grid-template-columns: 1fr;
